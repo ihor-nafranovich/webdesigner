@@ -1,0 +1,407 @@
+/* ========================================
+   СТИЛИ ДЛЯ ПЕЧАТИ ПОРТФОЛИО
+   ======================================== */
+
+/* Основные настройки печати */
+@media print {
+    /* Скрываем ненужные элементы */
+    .navbar,
+    .hamburger,
+    .theme-toggle,
+    .footer,
+    .admin-link,
+    .print-link,
+    .btn,
+    .project-links,
+    .hero-visual,
+    .floating-card,
+    .about-image,
+    .image-placeholder i,
+    #projects,
+    .projects,
+    .projects-grid {
+        display: none !important;
+    }
+
+    /* Настройки страницы */
+    @page {
+        margin: 1.5cm;
+        size: A4;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 10pt;
+        line-height: 1.4;
+        font-family: 'Inter', 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Убираем пустые разрывы страниц */
+    main {
+        page-break-before: auto !important;
+    }
+    
+    #home {
+        page-break-before: auto !important;
+    }
+
+    /* Оптимизация типографики */
+    h1, h2, h3, h4, h5, h6 {
+        color: #000 !important;
+        font-weight: 600;
+        page-break-after: avoid;
+        page-break-before: avoid;
+        margin-bottom: 0.5rem !important;
+        margin-top: 0.5rem !important;
+    }
+
+    h1 {
+        font-size: 22pt;
+    }
+
+    h2 {
+        font-size: 16pt;
+    }
+
+    h3 {
+        font-size: 12pt;
+    }
+
+    p {
+        font-size: 10pt;
+        text-align: justify;
+    }
+
+    /* Заголовки секций */
+    .section-title {
+        color: #000 !important;
+        font-size: 16pt;
+        margin-bottom: 0.5rem;
+        margin-top: 1.5rem;
+        border-bottom: 2px solid #000;
+        padding-bottom: 0.35rem;
+        page-break-after: avoid;
+        page-break-before: avoid;
+    }
+
+    /* Контейнер секций - без разрывов */
+    section {
+        page-break-inside: avoid;
+        page-break-before: auto;
+        page-break-after: auto;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+
+    /* Убираем разрыв страницы */
+    #skills {
+        page-break-before: auto !important;
+    }
+    
+    #projects {
+        page-break-before: auto !important;
+    }
+    
+    #contact {
+        page-break-before: auto !important;
+    }
+
+    /* Hero секция - компактнее */
+    .hero {
+        page-break-after: avoid !important;
+        page-break-before: auto !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .hero-container {
+        display: block;
+        text-align: center;
+    }
+
+    .hero-image {
+        display: none !important;
+    }
+
+    .hero-title {
+        font-size: 24pt;
+        margin-bottom: 0.5rem;
+        color: #000 !important;
+    }
+
+    .hero-subtitle {
+        font-size: 14pt;
+        color: #333 !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-text {
+        font-size: 10pt;
+        color: #555 !important;
+    }
+
+    .hero-buttons {
+        display: none !important;
+    }
+
+    /* Секция "Обо мне" */
+    .about-content {
+        display: block;
+        margin-bottom: 1rem !important;
+    }
+
+    .about-text {
+        column-count: 1;
+        font-size: 10pt;
+        line-height: 1.6;
+        color: #333 !important;
+        margin-bottom: 1rem;
+    }
+
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+        page-break-inside: avoid;
+    }
+
+    .stat-item {
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        background: #f9f9f9;
+    }
+
+    .stat-number {
+        font-size: 20pt;
+        font-weight: 700;
+        color: #000 !important;
+        display: block;
+    }
+
+    .stat-label {
+        font-size: 10pt;
+        color: #666 !important;
+    }
+
+    /* Секция "Навыки" */
+    .skills-grid {
+        display: block;
+        margin-bottom: 1rem !important;
+    }
+    
+    .skill-category {
+        margin-bottom: 1rem;
+        page-break-inside: avoid;
+    }
+    
+    .skill-category h3 {
+        font-size: 12pt;
+        margin-bottom: 0.5rem;
+        color: #000 !important;
+        font-weight: 600;
+    }
+    
+    .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .skill-item {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        padding: 0.5rem 1rem;
+        background: #f9f9f9;
+        font-size: 10pt;
+        color: #333 !important;
+    }
+
+    /* Секция "Проекты" - компактнее */
+    .projects-grid {
+        display: block;
+    }
+
+    .project-card {
+        page-break-inside: avoid;
+        margin-bottom: 0.5rem;
+        border: 1px solid #ddd;
+        padding: 0.25rem;
+        background: #fff;
+    }
+
+    .project-card h3 {
+        font-size: 8pt;
+        margin-bottom: 0.15rem;
+        color: #000 !important;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.15rem;
+    }
+
+    .project-content p {
+        font-size: 7pt;
+        margin-bottom: 0.15rem;
+        color: #444 !important;
+        line-height: 1.2;
+    }
+
+    .project-image {
+        max-height: 60px;
+        margin-bottom: 0.25rem;
+        text-align: center;
+        page-break-inside: avoid;
+    }
+
+    .project-img {
+        max-width: 100%;
+        max-height: 60px;
+        height: auto;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Placeholder для изображений */
+    .image-placeholder {
+        display: none !important;
+    }
+
+    /* Иконки в placeholder */
+    .image-placeholder i {
+        display: none !important;
+    }
+
+    .project-tech {
+        margin: 0.25rem 0;
+    }
+
+    .project-tech span {
+        display: inline-block;
+        margin: 0.125rem;
+        padding: 0.125rem 0.25rem;
+        background: #f0f0f0;
+        border: 1px solid #ddd;
+        font-size: 7pt;
+    }
+
+    /* Контакты */
+    .contact-content {
+        display: block;
+    }
+
+    .contact-info {
+        margin-bottom: 1rem;
+    }
+
+    .contact-item {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        background: #f9f9f9;
+    }
+
+    .contact-item i {
+        font-size: 16pt;
+        color: #333 !important;
+    }
+
+    .contact-item h3 {
+        font-size: 12pt;
+        margin-bottom: 0.25rem;
+        color: #000 !important;
+    }
+
+    .contact-item p {
+        font-size: 10pt;
+        color: #555 !important;
+        margin: 0;
+    }
+
+    /* Скрываем формы */
+    .contact-form {
+        display: none !important;
+    }
+
+    /* Фон для изображений */
+    .image-placeholder {
+        border: 1px solid #ddd;
+    }
+
+    /* Убираем тени и градиенты */
+    * {
+        background: white !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    /* Компактнее для всех элементов */
+    .container {
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    /* Убираем большие отступы */
+    .hero-description {
+        margin-bottom: 0.5rem !important;
+        font-size: 8pt;
+    }
+    
+    .about-text p {
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .project-content {
+        padding: 0.25rem !important;
+    }
+
+    /* Настройки для ссылок */
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+
+    /* Убираем лишние отступы - убрали дублирование */
+
+    /* Отключаем разрывы страниц */
+    .section-divider {
+        page-break-before: auto;
+    }
+
+    /* Скрытие элементов с классом no-print */
+    .no-print {
+        display: none !important;
+    }
+
+    /* Убираем контактную информацию внизу каждого раздела для экономии места */
+    section::after {
+        display: none !important;
+    }
+
+    /* Стили для иконок Font Awesome */
+    .fas, .far, .fab {
+        display: inline-block;
+        width: 1em;
+    }
+
+    /* Специальный класс для разрыва страницы */
+    .page-break {
+        page-break-after: always;
+    }
+
+    /* Избегаем разрыва внутри важных элементов */
+    .no-break {
+        page-break-inside: avoid;
+    }
+}
+
